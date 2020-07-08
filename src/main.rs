@@ -5,14 +5,13 @@ fn main() {
     let gitbid_flat = 0.3;
     let gitbid_percent = 0.05;
 
-    let mut counter = 0.0;
+    let price = [1.0, 2.0, 5.0, 10.0, 25.0, 50.0, 75.0, 100.0];
+    let mut index = 0;
 
-    loop {
-        counter += 1.0;
-        let profit = (gitbid_flat - stripe_flat) + ((counter) * (gitbid_percent - stripe_percent));
-        println!("{}$ will yield {}$", counter, profit);
-        if counter == 100.0 {
-            break;
-        }
+    while index < 5 {
+        let profit =
+            (gitbid_flat - stripe_flat) + ((price[index]) * (gitbid_percent - stripe_percent));
+        println!("{}$ will yield {}$", price[index], profit);
+        index += 1;
     }
 }
