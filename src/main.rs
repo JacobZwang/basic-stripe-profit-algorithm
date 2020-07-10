@@ -9,6 +9,6 @@ fn main() {
 
     for price in price.iter() {
         let profit = (our_flat - stripe_flat) + ((price) * (our_percent - stripe_percent));
-        println!("{}$ will yield {}$", price, profit);
+        println!("${} will yield ${}", price, profit);
     }
 }
